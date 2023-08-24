@@ -8,11 +8,13 @@ import {
     Textarea,
     Button,
     Text,
+    Box,
   } from "@chakra-ui/react";
 import axios from "axios";
 import {  useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginfunc } from "../../Redux/action";
+import Signup from "../signUp/SignUp";
 
 const Login = () => {
     const {isAuth} = useSelector((state) => state);
@@ -44,6 +46,10 @@ const Login = () => {
      setEmail("")
      setPass("")
       };
+
+      const handlegotosignup = ()=>{
+        navigate("/signup")
+      }
       
   return (
     <div>
@@ -72,6 +78,13 @@ const Login = () => {
         <Button mt="10px" colorScheme="blue" onClick={handleLogin}>
           Submit
         </Button>
+
+
+<Box onClick={handlegotosignup}>
+  <h1>Don't have an account click here</h1>
+<Button colorScheme="red">SignUp</Button>
+</Box>
+        
       </Container>
 
       <ToastContainer position="top-right" />

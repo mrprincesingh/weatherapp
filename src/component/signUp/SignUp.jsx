@@ -10,6 +10,7 @@ import {
   Textarea,
   Button,
   Text,
+  Box,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
@@ -147,7 +148,9 @@ const Signup = () => {
   const isValidMobileNumber = () => {
     return mobileNumber.trim().length <= 10;
   };
-
+const handlegotologinup = ()=>{
+  navigate("/login")
+}
   return (
     <div>
       <Container bgColor={"black.100"} mt="100px" p="10" lineHeight={"10"}>
@@ -229,6 +232,10 @@ const Signup = () => {
         <Button mt="10px" colorScheme="blue" onClick={handleSignup}>
           Submit
         </Button>
+        <Box onClick={handlegotologinup}>
+  <h1>Already have an account click here</h1>
+<Button colorScheme="red">Login</Button>
+</Box>
       </Container>
 
       <ToastContainer position="top-right" />
