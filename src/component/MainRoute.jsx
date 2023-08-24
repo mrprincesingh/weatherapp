@@ -14,7 +14,7 @@ import ReqAuth from './ReqAuth'
 const MainRoute = () => {
   return (
   <Routes>
-          <Route path="/" element={ <Home />} /> 
+          <Route path="/" element={ <ReqAuth><Home /></ReqAuth> } /> 
  <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
   </Routes>
